@@ -6,8 +6,8 @@ export const PlantsShow = () => {
       <Show >
           <SimpleShowLayout sx={{width:"500px"}}>
               <TextField source="id" label="ID"/>
-              <TextField source="name" label="Наименование цеха"/>
-              <TextField source="abbr" label="Аббривиатура" />
+              <TextField source="plant_name" label="Наименование цеха"/>
+              <TextField source="plant_abbr" label="Аббривиатура" />
               <DateField source="created_at"/>
           </SimpleShowLayout>
     </Show>

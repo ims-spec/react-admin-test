@@ -7,31 +7,49 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import GroupsIcon from '@mui/icons-material/Groups';
 import MemoryIcon from '@mui/icons-material/Memory';
+import SecurityIcon from "@mui/icons-material/Security";
 
 
 export const MyMenu = () => {
-  const [open, setOpen] = useState(false);
+  const [openMonitoring, setOpenMonitoring] = useState(false);
+  const [openAudit, setOpenAudit] = useState(false);
 
   return (
     <Menu>
       {/* Главный пункт меню */}
       <MenuItemLink to="/" primaryText="Главная" leftIcon={<DashboardIcon />} />
 
-      {/* Саб-меню */}
-      <ListItemButton onClick={() => setOpen(!open)}>
+      {/* Саб-меню ===Monitoring=== */}
+      <ListItemButton onClick={() => setOpenMonitoring(!openMonitoring)}>
         <ListItemIcon>
           <LegendToggleIcon />
         </ListItemIcon>
         <ListItemText primary="Мониторинг" />
-        {open ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        {openMonitoring ? <ExpandLessIcon /> : <ExpandMoreIcon />}
       </ListItemButton>
 
-      {open && (
+      {openMonitoring && (
         <>
           <MenuItemLink to="/plants" primaryText="Все подразделения"  leftIcon={<GroupsIcon/>}/>
           <MenuItemLink to="/processes" primaryText="Процессы" leftIcon={<MemoryIcon/>} />
         </>
       )}
+
+        {/* Саб-меню ===audit=== */}
+        <ListItemButton onClick={() => setOpenAudit(!openAudit)}>
+            <ListItemIcon>
+                <SecurityIcon/>
+            </ListItemIcon>
+            <ListItemText primary="Внутренний аудит" />
+            {openAudit ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </ListItemButton>
+
+        {openAudit && (
+            <>
+                <MenuItemLink to="/risks_categories" primaryText="Стандарты" leftIcon={<MemoryIcon/>} />
+                <MenuItemLink to="/risks" primaryText="Риски" leftIcon={<MemoryIcon/>} />
+            </>
+        )}
     </Menu>
   );
 };

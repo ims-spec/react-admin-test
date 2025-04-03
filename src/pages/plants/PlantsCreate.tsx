@@ -4,8 +4,8 @@ export const PlantsCreate = () => {
   return (
     <Create>
       <SimpleForm>
-        <TextInput source="name" label="Имя цеха"/>
-        <TextInput source="abbr" label="Аббривиатура"/>
+        <TextInput source="plant_name" label="Имя цеха"/>
+        <TextInput source="plant_abbr" label="Аббривиатура"/>
       </SimpleForm>
     </Create>
   );

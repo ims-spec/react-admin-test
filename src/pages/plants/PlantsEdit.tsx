@@ -4,7 +4,8 @@ export const PlantsEdit = () => {
   return (
     <Edit>
       <SimpleForm>
-        <TextInput source="name" />
+        <TextInput source="plant_name" />
+        <TextInput source="plant_abbr" />
       </SimpleForm>
     </Edit>
   );

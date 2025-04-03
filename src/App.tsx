@@ -14,6 +14,20 @@ import { ProcessList } from "./pages/processes/ProcessList";
 import { ProcessCreate } from "./pages/processes/ProcessCreate";
 import { ProcessEdit } from "./pages/processes/ProcessEdit";
 import { ProcessShow } from "./pages/processes/ProcessShow";
+
+
+//risks
+import {RisksCategoriesList} from "./pages/audit/risks_categories/RisksCategoriesList.tsx";
+import {RisksCategoriesCreate} from "./pages/audit/risks_categories/RisksCategoriesCreate.tsx";
+import {RisksCategoriesEdit} from "./pages/audit/risks_categories/RisksCategoriesEdit.tsx";
+import {RisksCategoriesShow} from "./pages/audit/risks_categories/RisksCategoriesShow.tsx";
+
+//risk
+import RiskList from "./pages/audit/risks/RiskList.tsx";
+import RiskCreate from "./pages/audit/risks/RiskCreate.tsx";
+import RiskEdit from "./pages/audit/risks/RiskEdit.tsx";
+import RiskShow from "./pages/audit/risks/RiskShow.tsx";
+
 // Создание клиента Supabase
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
@@ -25,6 +39,9 @@ import FactoryIcon from "@mui/icons-material/Factory";
 import MemoryIcon from "@mui/icons-material/Memory";
 
 import { MenuLayout } from "./components/MenuLayout";
+
+
+
 
 // Провайдер данных для React-Admin
 const dataProvider = supabaseDataProvider({
@@ -53,5 +70,22 @@ export const App = () => (
       show={ProcessShow}
       icon={MemoryIcon}
     />
+      <Resource
+          name="risks_categories"
+          list={RisksCategoriesList}
+          create={RisksCategoriesCreate}
+          edit={RisksCategoriesEdit}
+          show={RisksCategoriesShow}
+          icon={MemoryIcon}
+      />
+      <Resource
+          name="risks"
+          list={RiskList}
+          create={RiskCreate}
+          edit={RiskEdit}
+          show={RiskShow}
+          icon={MemoryIcon}
+      />
+
   </Admin>
 );

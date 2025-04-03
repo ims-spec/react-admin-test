@@ -6,8 +6,8 @@ export const PlantsList = () => {
       <List sx={{width:"1000px"}}>
           <Datagrid >
               <TextField source="id" label="ID"/>
-              <TextField source="name" label="Наименование цеха"/>
-              <TextField source="abbr"label="Аббривиатура"/>
+              <TextField source="plant_name" label="Наименование цеха"/>
+              <TextField source="plant_abbr" label="Аббривиатура"/>
           </Datagrid>
     </List>
   )
